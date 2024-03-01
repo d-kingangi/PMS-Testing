@@ -1,0 +1,118 @@
+
+
+.login-page {
+  display: flex;
+  flex-direction: row; 
+  margin: 20px auto;
+  height: 60%;
+}
+
+.background-image {
+  background-image: url(../../../assets/pexels-donald-kamau-7467680.jpg);
+  background-size: cover;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000; 
+}
+
+.large-text h3 {
+  font-size: 2em; 
+}
+
+.right-section {
+  flex: 1;
+  position: relative;
+}
+
+.blurry-background {
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+
+.login {
+  background: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-input {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #ccc; 
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  outline: none; 
+}
+
+input:focus {
+  border-bottom-color: #007BFF; 
+  transition: border-bottom-color 0.3s ease;
+}
+
+.button-orange {
+  background-color: orange;
+  border-radius: 5px;
+  color: #fff; 
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.button-orange:hover {
+  background-color: darkorange;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .login-page {
+      flex-direction: column; 
+  }
+
+  .login {
+      max-width: 100%;
+  }
+}
+
+.message {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.success {
+  color: #4caf50;
+}
+
+.error {
+  color: #f44336;
+}

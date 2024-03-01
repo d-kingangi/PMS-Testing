@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<div class="register flex justify-center">
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="">
+
+        <div *ngIf="errorMessage" class="text-red-500 mt-3">{{ errorMessage }}</div>
+        <div *ngIf="successMessage" class="text-green-500 mt-3">{{ successMessage }}</div>
+
+        <div><h2 class="font-bold text-center">{{title}}</h2></div> 
+        <div class="mb-4 flex flex-column">
+            <label class="mb-2">First Name:</label><br>
+            <input type="text " formControlName="firstname" class="" id="">
+            <div *ngIf="registerForm.get('firstname')?.invalid && registerForm.get('firstname')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+        </div>
+        <div class="mb-4 flex flex-column">
+            <label class="mb-2">Last Name:</label><br>
+            <input type="text " formControlName="lastname" class="" id="">
+            <div *ngIf="registerForm.get('lastname')?.invalid && registerForm.get('lastname')?.touched" class="tex-sm text-red-500 mt-[3px]">This required</div>
+        </div>
+        <div class="mb-4 flex flex-column">
+            <label class="mb-2">Email:</label><br>
+            <input type="email " formControlName="email" class="" id="">
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]"></div>
+            <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="tex-sm text-red-500 mt-[3px]">Invalid Format</div>
+        </div>
+        <div class="mb-4 flex flex-column">
+            <label class="">Password:</label><br>
+            <input type="text " formControlName="password" class="" id="">
+            <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="tex-sm text-red-500 mt-[3px]">Password must contain at least one number, one letter, and one special character.</div>
+        </div>
+        <div class="">
+            <input type="submit" [disabled]="registerForm.invalid" class="" value="Create Account" data-cy="create-acc-btn">
+        </div>
+        <div>
+            Already have an account? 
+            <a routerLink='/login' class="text-blue-500 hover:text-blue-600 cursor-pointer">Proceed to login</a>
+        </div>
+    </form>
+</div>
+

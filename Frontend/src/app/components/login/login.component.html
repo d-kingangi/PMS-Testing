@@ -1,0 +1,42 @@
+
+<div class="login-page">
+    <div class="welcome"> 
+        <img src="https://cdn.pixabay.com/photo/2016/06/14/08/47/woman-1455991_640.png" alt="">
+    </div>
+
+    <div class="left-section">
+        <div class="large-text">
+            <h3>Lets Get You back</h3>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <div class="blurry-background"></div>
+
+        <div class="sucessMsg message" [ngClass]="{'success': successMsg, 'error': errorMsg}">
+            {{ successMsg || errorMsg }}
+          </div>
+
+        <div class="login">
+            <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+                <div><h3>{{ title }}</h3></div>
+                
+                <div class="form-input">
+                    <label class="">Enter Email:</label>
+                    <input type="email" formControlName="email" class="email">
+                    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">Invalid Email Format</div>
+                </div>
+                
+                <div class="form-input">
+                    <label class="">Enter Password:</label>
+                    <input type="password" formControlName="password" class="password">
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">This is Required</div>
+                </div>
+                
+                <div class="form-input">
+                    <input type="submit" [disabled]="loginForm.invalid" value="Login" class=" login-btn button-orange" id="login-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+    
