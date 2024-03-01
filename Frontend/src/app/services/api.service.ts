@@ -16,4 +16,12 @@ export class ApiService {
       })
     });
   }
+
+  getOneUserDetails(id:string){
+    return this.http.get<{user:users[]}>(`http://localhost:4100/users/${id}`, {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+      })
+    })
+  }
 }
