@@ -34,6 +34,7 @@ describe('ApiService', () => {
 
   it('registers a user', ()=>{
     let mockUser ={
+      userId: "206ff9b5-5413-4f20-b343-501285fcf0a3",
       firstname: "johannes",
       lastname: "johannes",
       email: "johannes@gmail.com",
